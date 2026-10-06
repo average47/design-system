@@ -1,0 +1,108 @@
+/*
+ * Button — Figma: Marketing Platform | Design System, node 2030:928 (set 2:138).
+ * Values are taken directly from the Figma variants; the repo has no token
+ * layer yet, so they are hard-coded here.
+ */
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  border-radius: 12px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 300ms ease-out,
+    box-shadow 300ms ease-out,
+    color 300ms ease-out;
+}
+
+.ds-button:focus-visible {
+  outline: 2px solid #fdb517;
+  outline-offset: 2px;
+}
+
+.ds-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ds-button__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-button__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Type=Primary — Type/cta/large */
+.ds-button--primary {
+  height: 54px;
+  padding: 16px 64px;
+  background-color: #fdb517;
+  color: #000000;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.ds-button--primary:hover:not(:disabled) {
+  background-color: #ffffff;
+}
+
+/* Breakpoint=Mobile, Type=Primary — Type/cta/medium */
+.ds-button--primary.ds-button--mobile {
+  height: auto;
+  padding: 12px 36px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* Type=Secondary — Type/cta/medium, 1px inside stroke */
+.ds-button--secondary {
+  height: 54px;
+  padding: 16px 28px;
+  background-color: #000000;
+  box-shadow: inset 0 0 0 1px #3b3b3b;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.ds-button--secondary:hover:not(:disabled) {
+  background-color: #3b3b3b;
+}
+
+/* Type=Tertiary — Type/cta/small, 1px inside stroke */
+.ds-button--tertiary {
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #000000;
+  box-shadow: inset 0 0 0 1px #3b3b3b;
+  color: #e6e6e6;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ds-button--tertiary:hover:not(:disabled) {
+  background-color: #3b3b3b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-button {
+    transition: none;
+  }
+}
