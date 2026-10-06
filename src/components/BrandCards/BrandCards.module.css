@@ -1,0 +1,127 @@
+/*
+ * Values come from the Figma "BrandCards" component set (2227:1049) and the
+ * primary "Button" component it instances. The repo has no token layer yet,
+ * so Figma variables are hard-coded here.
+ */
+.root {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--brand-cards-gap);
+  width: 100%;
+  padding: var(--brand-cards-padding-block) 16px;
+  background: #000;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.desktop {
+  --brand-cards-gap: 48px;
+  --brand-cards-padding-block: 48px;
+  --brand-cards-content-gap: 36px;
+  --brand-cards-headline-width: 520px;
+  --brand-cards-headline-size: 32px;
+  --brand-cards-list-width: none;
+  --brand-cards-list-gap: 16px;
+  --brand-cards-cta-padding: 16px 64px;
+  --brand-cards-cta-font-size: 18px;
+  --brand-cards-cta-line-height: 25px;
+}
+
+.mobile,
+.responsive {
+  --brand-cards-gap: 36px;
+  --brand-cards-padding-block: 40px;
+  --brand-cards-content-gap: 24px;
+  --brand-cards-headline-width: 358px;
+  --brand-cards-headline-size: 24px;
+  --brand-cards-list-width: 358px;
+  --brand-cards-list-gap: 12px;
+  --brand-cards-cta-padding: 12px 36px;
+  --brand-cards-cta-font-size: 16px;
+  --brand-cards-cta-line-height: 22px;
+}
+
+@media (min-width: 1024px) {
+  .responsive {
+    --brand-cards-gap: 48px;
+    --brand-cards-padding-block: 48px;
+    --brand-cards-content-gap: 36px;
+    --brand-cards-headline-width: 520px;
+    --brand-cards-headline-size: 32px;
+    --brand-cards-list-width: none;
+    --brand-cards-list-gap: 16px;
+    --brand-cards-cta-padding: 16px 64px;
+    --brand-cards-cta-font-size: 18px;
+    --brand-cards-cta-line-height: 25px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--brand-cards-content-gap);
+  width: 100%;
+}
+
+.headline {
+  width: 100%;
+  max-width: var(--brand-cards-headline-width);
+  margin: 0;
+  font-size: var(--brand-cards-headline-size);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--brand-cards-list-gap);
+  width: 100%;
+  max-width: var(--brand-cards-list-width);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--brand-cards-cta-padding);
+  border: 0;
+  border-radius: 12px;
+  background: #fdb517;
+  color: #000;
+  font: inherit;
+  font-size: var(--brand-cards-cta-font-size);
+  font-weight: 700;
+  line-height: var(--brand-cards-cta-line-height);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 300ms ease-out;
+}
+
+.cta:hover {
+  background: #fff;
+}
+
+.cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}
