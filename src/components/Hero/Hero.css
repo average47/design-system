@@ -1,0 +1,160 @@
+/*
+ * Hero — Figma: Marketing Platform | Design System, node 2030:963 (set 61:4455).
+ * Values are taken directly from the Figma variants; the repo has no token
+ * layer yet, so they are hard-coded here.
+ */
+
+.ds-hero {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  /* Fallback when no background image is supplied. */
+  background-color: #2b2b2b;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.ds-hero__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ds-hero__logo {
+  display: flex;
+  max-width: 100%;
+}
+
+.ds-hero__logo > svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.ds-hero__main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ds-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ds-hero__intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-hero__headline,
+.ds-hero__subheader,
+.ds-hero__pricing,
+.ds-hero__legal {
+  margin: 0;
+  font-weight: 400;
+}
+
+.ds-hero__headline {
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.ds-hero__subheader {
+  color: #e6e6e6;
+}
+
+.ds-hero__pricing {
+  color: #ffffff;
+}
+
+/* Type/body/xsmall */
+.ds-hero__legal {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/* Breakpoint=Desktop */
+.ds-hero--desktop {
+  justify-content: center;
+  min-height: 572px;
+  padding: 48px 128px;
+  text-align: left;
+}
+
+.ds-hero--desktop .ds-hero__content {
+  gap: 24px;
+  max-width: 511px;
+}
+
+.ds-hero--desktop .ds-hero__main {
+  align-items: flex-start;
+}
+
+.ds-hero--desktop .ds-hero__intro {
+  gap: 16px;
+}
+
+.ds-hero--desktop .ds-hero__headline {
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.ds-hero--desktop .ds-hero__subheader,
+.ds-hero--desktop .ds-hero__pricing {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* Legal sits 24px below the copy block on desktop (vs. 20px between copy items). */
+.ds-hero--desktop .ds-hero__legal {
+  margin-top: 4px;
+  color: #e6e6e6;
+}
+
+/* Breakpoint=Mobile */
+.ds-hero--mobile {
+  align-items: center;
+  padding: 160px 16px 24px;
+  text-align: center;
+}
+
+.ds-hero--mobile .ds-hero__content {
+  align-items: center;
+  gap: 16px;
+  max-width: 393px;
+}
+
+.ds-hero--mobile .ds-hero__main {
+  align-items: center;
+  align-self: stretch;
+}
+
+.ds-hero--mobile .ds-hero__intro {
+  gap: 12px;
+}
+
+/* Type/headline/3 */
+.ds-hero--mobile .ds-hero__headline {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+/* Type/body/medium */
+.ds-hero--mobile .ds-hero__subheader,
+.ds-hero--mobile .ds-hero__pricing {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.ds-hero--mobile .ds-hero__legal {
+  max-width: 315px;
+  margin: 0 auto;
+  color: #ffffff;
+}
