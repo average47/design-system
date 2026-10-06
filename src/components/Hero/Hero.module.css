@@ -1,0 +1,199 @@
+/*
+ * Values come from the Figma Hero component (61:4455). The repo has no shared
+ * design tokens yet, so they are kept as component-scoped custom properties.
+ * Figma text styles: Type/headline/1, Type/body/large, Type/body/xsmall, Type/cta/large.
+ *
+ * Mobile is the base layout; the desktop values are applied by `.desktop` or,
+ * for `.responsive`, from 768px up.
+ */
+
+.root {
+  /* Colours */
+  --hero-color-background: #262626;
+  --hero-color-text-primary: #ffffff;
+  --hero-color-text-secondary: #e6e6e6;
+  --hero-color-cta-background: #fdb517;
+  --hero-color-cta-background-hover: #ffffff;
+  --hero-color-cta-text: #000000;
+
+  /* Layout: Breakpoint=Mobile */
+  --hero-padding: 160px 16px 24px;
+  --hero-min-height: auto;
+  --hero-align: center;
+  --hero-text-align: center;
+  --hero-content-max-width: 393px;
+  --hero-body-gap: 16px;
+  --hero-heading-gap: 12px;
+  --hero-legal-offset: 4px;
+  --hero-legal-max-width: 315px;
+
+  /* Typography: Breakpoint=Mobile */
+  --hero-headline-size: 32px;
+  --hero-body-size: 16px;
+  --hero-body-line-height: 19px;
+  --hero-cta-size: 16px;
+  --hero-cta-line-height: 22px;
+  --hero-cta-padding-inline: 36px;
+  --hero-cta-min-height: 46px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: var(--hero-align);
+  box-sizing: border-box;
+  min-height: var(--hero-min-height);
+  padding: var(--hero-padding);
+  background-color: var(--hero-color-background);
+  background-position: center;
+  background-size: cover;
+  color: var(--hero-color-text-primary);
+  font-family: Inter, system-ui, sans-serif;
+  text-align: var(--hero-text-align);
+}
+
+.desktop {
+  --hero-padding: 48px 128px;
+  --hero-min-height: 572px;
+  --hero-align: flex-start;
+  --hero-text-align: left;
+  --hero-content-max-width: 511px;
+  --hero-body-gap: 24px;
+  --hero-heading-gap: 16px;
+  --hero-legal-offset: 0px;
+  --hero-legal-max-width: none;
+
+  --hero-headline-size: 48px;
+  --hero-body-size: 20px;
+  --hero-body-line-height: 24px;
+  --hero-cta-size: 18px;
+  --hero-cta-line-height: 25px;
+  --hero-cta-padding-inline: 64px;
+  --hero-cta-min-height: 54px;
+}
+
+@media (min-width: 768px) {
+  .responsive {
+    --hero-padding: 48px 128px;
+    --hero-min-height: 572px;
+    --hero-align: flex-start;
+    --hero-text-align: left;
+    --hero-content-max-width: 511px;
+    --hero-body-gap: 24px;
+    --hero-heading-gap: 16px;
+    --hero-legal-offset: 0px;
+    --hero-legal-max-width: none;
+
+    --hero-headline-size: 48px;
+    --hero-body-size: 20px;
+    --hero-body-line-height: 24px;
+    --hero-cta-size: 18px;
+    --hero-cta-line-height: 25px;
+    --hero-cta-padding-inline: 64px;
+    --hero-cta-min-height: 54px;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: var(--hero-align);
+  gap: 32px;
+  width: 100%;
+  max-width: var(--hero-content-max-width);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: var(--hero-align);
+  gap: var(--hero-body-gap);
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  max-width: 100%;
+}
+
+.logo > svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-heading-gap);
+}
+
+.headline {
+  margin: 0;
+  font-size: var(--hero-headline-size);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.subheader,
+.pricing {
+  margin: 0;
+  font-size: var(--hero-body-size);
+  font-weight: 400;
+  line-height: var(--hero-body-line-height);
+}
+
+.subheader {
+  color: var(--hero-color-text-secondary);
+}
+
+.legal {
+  margin: var(--hero-legal-offset) 0 0;
+  max-width: var(--hero-legal-max-width);
+  color: var(--hero-color-text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--hero-cta-min-height);
+  padding: 12px var(--hero-cta-padding-inline);
+  border: 0;
+  border-radius: 12px;
+  background-color: var(--hero-color-cta-background);
+  color: var(--hero-color-cta-text);
+  font: inherit;
+  font-size: var(--hero-cta-size);
+  font-weight: 700;
+  line-height: var(--hero-cta-line-height);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 300ms ease-out;
+}
+
+.cta:hover {
+  background-color: var(--hero-color-cta-background-hover);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--hero-color-text-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}
