@@ -1,0 +1,153 @@
+/*
+ * BrandCards — Figma: Marketing Platform | Design System, node 2236:118.
+ * Values are taken directly from the Figma frame; the repo has no token
+ * layer yet, so they are hard-coded here.
+ */
+
+.ds-brand-cards {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  background-color: #212121;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.ds-brand-cards__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+.ds-brand-cards__content {
+  display: flex;
+  flex: 0 1 1260px;
+  flex-direction: column;
+  gap: 64px;
+  min-width: 0;
+}
+
+.ds-brand-cards__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 408px;
+}
+
+.ds-brand-cards__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ds-brand-cards__headline,
+.ds-brand-cards__subheader,
+.ds-brand-cards__swimlane-title {
+  margin: 0;
+}
+
+/* Type/headline/2 */
+.ds-brand-cards__headline {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+/* Type/body/medium */
+.ds-brand-cards__subheader {
+  color: #e6e6e6;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.ds-brand-cards__swimlane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Type/cta/large */
+.ds-brand-cards__swimlane-title {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.ds-brand-cards__list {
+  display: flex;
+  gap: 20px;
+  margin: -4px;
+  padding: 4px; /* keeps card focus outlines clear of the scroll clip */
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none;
+}
+
+.ds-brand-cards__list::-webkit-scrollbar {
+  display: none;
+}
+
+.ds-brand-cards__item {
+  flex-shrink: 0;
+}
+
+.ds-brand-cards__key-art {
+  position: relative;
+  flex: 1 1 480px;
+  max-width: 980px;
+  aspect-ratio: 980 / 545;
+  overflow: hidden;
+}
+
+.ds-brand-cards__key-art-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom and left fades into black. */
+.ds-brand-cards__key-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0) 42.7%),
+    linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 40.3%);
+  pointer-events: none;
+}
+
+/* Breakpoint=Desktop */
+.ds-brand-cards--desktop {
+  padding: 48px 128px;
+}
+
+/* Breakpoint=Mobile */
+.ds-brand-cards--mobile {
+  padding: 24px 16px;
+}
+
+.ds-brand-cards--mobile .ds-brand-cards__inner,
+.ds-brand-cards--mobile .ds-brand-cards__content {
+  gap: 40px;
+}
+
+/* Type/headline/3 */
+.ds-brand-cards--mobile .ds-brand-cards__headline {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.ds-brand-cards--mobile .ds-brand-cards__intro {
+  gap: 16px;
+}
+
+.ds-brand-cards--mobile .ds-brand-cards__list {
+  gap: 12px;
+}
